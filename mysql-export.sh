@@ -7,8 +7,7 @@ fi
 
 database=$1
 
-# TODO: How do I replace this with a bash alternative?
-timestamp=`ruby -e "puts Time.now.strftime('%Y%m%d%H%M%S')"`
+timestamp=`date +"%Y%m%d%H%M%S"`
 backup_directory=mysql_export.$1.$timestamp
 
 mkdir -p $backup_directory
