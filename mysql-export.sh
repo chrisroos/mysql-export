@@ -15,5 +15,5 @@ echo "Writing backups to $backup_directory"
 
 for table in `mysql $database -uroot -e"SHOW TABLES" | grep -v 'Tables_in'`
 do
-  mysql $database -uroot -e"SELECT * FROM $table" > $backup_directory/$table.tsv
+  mysql $database -uroot -e"SELECT * FROM $table\G" > $backup_directory/$table.txt
 done
